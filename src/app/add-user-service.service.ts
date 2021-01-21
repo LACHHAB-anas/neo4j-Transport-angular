@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,7 @@ export class AddUserServiceService {
 
   constructor(private http: HttpClient) { }
 
-  addUser(){
-    return this.http.get('http://localhost:8081/anas')
+  addUser(user : User){
+    return this.http.post('http://localhost:8081/adduser',user);
   }
 }

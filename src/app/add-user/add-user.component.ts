@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddUserServiceService } from '../add-user-service.service';
 import { NgForm } from '@angular/forms' ; 
+import { User } from '../user';
 
 
 
@@ -12,6 +13,7 @@ import { NgForm } from '@angular/forms' ;
 export class AddUserComponent implements OnInit {
 
    nameUser= "Anas" ; 
+   user = new User();
 
   constructor(private service:AddUserServiceService) { }
 
@@ -20,8 +22,14 @@ export class AddUserComponent implements OnInit {
   }
 
   addUser(){
-    
-    console.log(this.service.addUser())
+    this.service.addUser(this.user).subscribe(
+      (data)=>{
+        console.log(this.user);
+      },
+      err=>{
+        console.log(err);
+      }
+    )
   }
 
   onFormSubmit(userForm:NgForm) {

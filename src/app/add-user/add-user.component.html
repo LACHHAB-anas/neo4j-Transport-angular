@@ -9,40 +9,40 @@
 
                 <div class="form-group col-5">
                     <label>Name</label>
-                    <input type="text" ngModel name="UserLastName"  class="form-control" />
+                    <input type="text" [(ngModel)]="user.Nom" name="UserLastName"  class="form-control" />
                     
                 </div>
 
                 <div class="form-group col-5">
                     <label>Age</label>
-                    <input type="number" ngModel name="UserAge"  class="form-control" />
+                    <input type="number" [(ngModel)]="user.Age" name="UserAge"  class="form-control" />
                    
                 </div>
             
             <div class="form-group col-5">
                 <label>Handicap</label>
-                <input type="checkbox" ngModel name="handicap" class="form-control"  />
+                <input type="checkbox" [(ngModel)]="user.Handicap" name="handicap" class="form-control"  />
                
             </div>
         </div>
             <div class="form-group col-5">
                 <label>Bus</label>
-                <input type="number" min="0" max="2" ngModel name="notebus" class="form-control"  />
+                <input type="number" [(ngModel)]="user.notebus" min="0" max="2" ngModel name="notebus" class="form-control"  />
                
             </div>
             <div class="form-group col-5">
                 <label>Tram</label>
-                <input type="number" min="0" max="2" ngModel name="notetram" class="form-control"  />
+                <input type="number" [(ngModel)]="user.notetram" min="0" max="2" ngModel name="notetram" class="form-control"  />
                
             </div>
             <div class="form-group col-5">
                 <label>Taxi</label>
-                <input type="number" min="0" max="2"  ngModel name="notetaxi" class="form-control"  />
+                <input type="number" [(ngModel)]="user.notebus" min="0" max="2"  ngModel name="notetaxi" class="form-control"  />
                
             </div>
         
             <div class="text-center">
-                <button class="btn btn-primary mr-1">Register</button>
+                <button class="btn btn-primary mr-1" (onClick)="addUser()">Register</button>
                 <button class="btn btn-secondary" type="button" [routerLink]="['']" >Cancel</button>
             </div>
         </form>
