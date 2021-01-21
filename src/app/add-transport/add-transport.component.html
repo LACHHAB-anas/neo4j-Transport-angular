@@ -4,30 +4,31 @@
     <div class="card-body">
         <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)" >
             <div class="form-row">
-                <div class="form-group col">
-                    <label>Neo4j 🔥 </label>
-                 
-                    
-                </div>
+                
                 <div class="form-group col-5">
-                    <label>From</label>
+                    <label>Name of Station</label>
                     <input type="text" ngModel name="stationFrom"  class="form-control" />
                    
                 </div>
                 <div class="form-group col-5">
-                    <label>To</label>
-                    <input type="text" ngModel name="stationTo"  class="form-control" />
+                    <label>Type</label>
+                    <select name="stationTo" class="form-control">
+                        <option>Bus</option>
+                        <option>Taxi</option>
+                        <option>Tram</option>
+                      </select>
+
+                </div>
+                <div class="form-group col-5">
+                    <label>Time</label>
+                    <input type="text" placeholder="hh:mm" ngModel name="stationFrom"  class="form-control" />
                    
                 </div>
             </div>
-            <div class="form-group">
-                <label>Transport</label>
-                <input type="text" ngModel name="transport" class="form-control"  />
-               
-            </div>
+           
            
             <div class="text-center">
-                <button class="btn btn-primary mr-1">Search</button>
+                <button class="btn btn-primary mr-1">Add Station</button>
                 <button class="btn btn-secondary" type="button" [routerLink]="['']" >Cancel</button>
             </div>
         </form>
